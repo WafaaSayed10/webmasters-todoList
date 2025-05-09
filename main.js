@@ -44,8 +44,10 @@ function displyTaskList() {
   }
   for(var task of allTasks){
     const done = document.querySelector(`.doneORno${task.id}`);
+    const doneBtn = document.querySelector(`.done-btn${task.id}`);
       if(task.done === true){
         done.classList.add("done");
+        doneBtn.textContent="Undo";
       }
   }
   checkAllTasksDone();
