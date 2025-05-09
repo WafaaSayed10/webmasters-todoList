@@ -39,9 +39,9 @@ input{
     background-color: transparent;
     border: none;
     caret-color: rgb(44, 156, 197);
+    color: #ffff;
 }
 input::placeholder{
-    color: rgb(16, 16, 106);
     color: rgb(44, 156, 197);
 }
 input:focus{
