@@ -33,13 +33,20 @@ function displyTaskList() {
   var ulForTaskList = document.getElementById("taskList");
   ulForTaskList.innerHTML = "";
   for (var task of allTasks) {
-      var liForTask = document.createElement("li");
+      var li = document.createElement("li");
       //for each task we create li contain task name and two buttons done, delete
-      liForTask.innerHTML = `<div class="doneORno${task.id}">${task.name}</div> 
+      li.innerHTML = `<div class="doneORno${task.id}">${task.name}</div> 
         <div><button class="done-btn done-btn${task.id}" onclick="doneTask(${task.id})">Done</button>
         <button class="delete-btn" onclick="deleteTask(${task.id})">Delete</button></div>`;
+      
       //add li to ul in each time
-      ulForTaskList.appendChild(liForTask);
+      ulForTaskList.appendChild(li);
+  }
+  for(var task of allTasks){
+    const done = document.querySelector(`.doneORno${task.id}`);
+      if(task.done === true){
+        done.classList.add("done");
+      }
   }
   checkAllTasksDone();
 }
